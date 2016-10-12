@@ -128,7 +128,10 @@ function RaceAverage() {
 
 
 $(function(){
-  var result, $Output = $('#Output');
+  'use strict';
+
+  var race, result;
+  var $Output = $('#Output');
 
   // Problem #1:
   result = 'Problem #1:\n["'+ textBlocking(['AAA', 'BBB', 'CCC']).join('","') +'"]';
@@ -138,18 +141,17 @@ $(function(){
   result = 'Problem #1:\n["'+ textBlocking(['A','A','A','A','A']).join('","') +'"]';
   $Output.append($('<textarea/>').text(result)); // Need fix for 1dim, 1char array
 
-  $Output.append('<br>');
-
   // Problem #2:
-  var race = new RaceAverage();
+  $Output.append('<br>');
+  race = new RaceAverage();
   result = race.avgMinutes(["12:00 PM, DAY 1", "12:01 PM, DAY 1"]);
   $Output.append('<textarea>Problem #2:\n'+ result +'</textarea>');
 
-  var race = new RaceAverage();
+  race = new RaceAverage();
   result = race.avgMinutes(["12:02 AM, DAY 2"]); // Need fix for midnight
   $Output.append('<textarea>Problem #2:\n'+ result +'</textarea>');
 
-  var race = new RaceAverage();
+  race = new RaceAverage();
   result = race.avgMinutes(["02:00 PM, DAY 19", "02:00 PM, DAY 20", "01:58 PM, DAY 20"]);
   $Output.append('<textarea>Problem #3:\n'+ result +'</textarea>');
 });
