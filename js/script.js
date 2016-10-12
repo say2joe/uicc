@@ -29,7 +29,10 @@ function textBlocking (lines) {
   for (; i < numChars; i++) {
     result.push(chars[i]) - 1;
     lines.forEach(function(line, idx) {
-      if (idx > 0) result[i] += line.charAt(idx);
+      if (idx > 0) {
+        if (numChars === 1) idx = 0;
+        result[i] += line.charAt(idx);
+      }
     });
   }
 
@@ -92,7 +95,7 @@ var getElapsedMinutes = function(timeframe) {
 
   mins += (hours * 60); // final day
 
-  return mins - start;
+  return mins - start; // 8am start
 };
 
 function RaceAverage() {
@@ -139,7 +142,7 @@ $(function(){
   result = 'Problem #1:\n["'+ textBlocking(["AAAAAAAAAAAAA"]).join('","') +'"]';
   $Output.append($('<textarea/>').text(result));
   result = 'Problem #1:\n["'+ textBlocking(['A','A','A','A','A']).join('","') +'"]';
-  $Output.append($('<textarea/>').text(result)); // Need fix for 1dim, 1char array
+  $Output.append($('<textarea/>').text(result));
 
   // Problem #2:
   $Output.append('<br>');
@@ -148,7 +151,7 @@ $(function(){
   $Output.append('<textarea>Problem #2:\n'+ result +'</textarea>');
 
   race = new RaceAverage();
-  result = race.avgMinutes(["12:02 AM, DAY 2"]); // Need fix for midnight
+  result = race.avgMinutes(["12:00 AM, DAY 2"]);
   $Output.append('<textarea>Problem #2:\n'+ result +'</textarea>');
 
   race = new RaceAverage();
