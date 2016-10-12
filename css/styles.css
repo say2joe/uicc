@@ -1,0 +1,103 @@
+/* Resets */
+* { box-sizing: border-box; }
+
+.clearfix {
+	overflow: auto;
+	zoom: 1;
+}
+
+h2 { margin: 0; }
+
+a {
+	text-decoration: none;
+	color: #205888;
+}
+
+input[type="text"]:active,
+input[type="text"]:focus {
+	outline: 0;
+	border: 0;
+}
+
+
+/* Re-usable styles */
+.grey       { color: #63666A; }
+.light-grey { color: #C5C5C5; }
+
+.font-300 { font-weight: 300; }
+.font-700 { font-weight: 700; }
+
+
+/* Start page styles */
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: 'Lato', sans-serif;
+	font-size: 14px;
+	color: black;
+	background: black;
+}
+
+
+/* Modal CSS */
+.modal {
+	transform: translate(-50%, -50%);
+	background-color: #fff;
+	top: 50%; left: 50%;
+	position: absolute;
+	height: 600px;
+	width: 936px;
+}
+.modal .user-content-image {
+	height: 600px;
+	width: 600px;
+	float: left;
+}
+.modal .user-content-image img {
+	max-height: 600px;
+	max-width: 600px;
+}
+.modal .user-content-text {
+	padding: 20px 25px;
+	position: relative;
+	height: 520px;
+	width: 336px;
+	float: left;
+}
+.modal .user-content-text header {
+	border-bottom: 1px solid #c5c5c5;
+	height: 59px;
+}
+.modal .user-content-text header a {
+	display: inline-block;
+  line-height: 3.5em;
+}
+.modal .user-content-text .subheader {
+	font-size: inherit;
+	margin: 22px 0;
+	color: #63666a;
+}
+.modal .user-content-text .chronology {
+	display: block;
+	float: right;
+}
+.modal .user-content-text footer {
+	border-top: 1px solid #c5c5c5;
+	position: fixed;
+	width: 336px;
+	bottom: 20px;
+	right: 0;
+}
+.modal .user-content-text footer img {
+	margin: 22px 15px 0 25px;
+}
+.modal .user-content-text footer input {
+	position: relative;
+	border: none;
+	top: -7px;
+}
+.modal .user-content-text footer input:focus {
+	outline: none;
+}
