@@ -126,10 +126,9 @@ function RaceAverage() {
 }
 
 
-var $Output;
+
 $(function(){
-  var result;
-  $Output = $('#Output');
+  var result, $Output = $('#Output');
 
   // Problem #1:
   result = 'Problem #1:\n["'+ textBlocking(['AAA', 'BBB', 'CCC']).join('","') +'"]';
